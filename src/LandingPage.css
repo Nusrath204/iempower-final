@@ -1,0 +1,86 @@
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    height: 4rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-sizing: content-box;
+    z-index: 100;
+    position: relative;
+}
+
+.ticker {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 4rem;
+    white-space: nowrap;
+    box-sizing: content-box;
+    animation: ticker 5s linear infinite; /* Faster scrolling */
+}
+
+.ticker-item {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 1.1rem;  /* Increased font size */
+    color: white;
+    font-weight: 500;  /* Added medium font weight */
+    text-transform: uppercase;  /* Made text uppercase */
+    letter-spacing: 0.5px;  /* Added slight letter spacing */
+}
+
+.ticker-item.with-dot {
+    position: relative;
+    padding-left: 40px;  /* Increased left padding to accommodate larger dot */
+}
+
+.ticker-item.with-dot::before {
+    content: "";
+    position: absolute;
+    left: 10px;  /* Adjusted left position */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;  /* Increased dot size */
+    height: 16px;  /* Increased dot size */
+    background-color: white;
+    border-radius: 50%;
+}
+
+.absolute-bottom-ticker {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 150px; /* Adjust this value to move it above the image */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 50;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0); /* Start at the original position */
+    }
+    100% {
+        transform: translateX(-50%); /* Move fully to the left */
+    }
+}
+
+/* Introduction Section (IntroductionSection) */
+.absolute-bottom-introduction {
+    position: bottom;  /* Change to fixed to pin it to the bottom */
+    left: 0;
+    right: 0;
+    bottom: 0;  /* Keep it at the bottom of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    z-index: 30;  /* Ensure it's below the floating text */
+    box-shadow: 0px -10px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+
